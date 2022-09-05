@@ -10,6 +10,7 @@ CREATE TABLE stogs (
     length      TEXT NOT NULL,
     gauge       INTEGER,
     strength    TEXT,
-    vintage     INTEGER
+    is_favorite BOOLEAN,
+    image       TEXT
 );
 

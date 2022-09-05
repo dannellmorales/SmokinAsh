@@ -20,17 +20,18 @@ const getStog = async (id) => {
 };
 
 const createStog = async (stog) => {
-  const { name, brand, length, gauge, strength, vintage } = stog
+  const { name, brand, length, gauge, strength, is_favorite, image } = stog
   try {
-    const newStog = await db.one("INSERT INTO stogs (name, brand ,length, gauge, strength, vintage) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+    const newStog = await db.one("INSERT INTO stogs (name, brand ,length, gauge, strength, is_favorite, image) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
-        name, 
-        brand, 
-        length, 
-        gauge, 
-        strength, 
-        vintage,
-      ]);
+          name, 
+          brand, 
+          length, 
+          gauge, 
+          strength, 
+          is_favorite,
+          image
+        ]);
     return newStog;
   } catch (error) {
     return error;
@@ -52,18 +53,18 @@ const deleteStog = async (id) => {
 const editStog = async (stog, id ) => {
   try {
     const editedStog = await db.one(
-      "UPDATE stogs SET name=$1, brand=$2, length=$3, gauge=$4, strength=$5, vintage=$6, WHERE id=$7 RETURNING *",
+      "UPDATE stogs SET name=$1, brand=$2, length=$3, gauge=$4, strength=$5, is_favorite=$6, image=$7 WHERE id=$8 RETURNING *",
       [
         stog.name, 
         stog.brand, 
         stog.length, 
         stog.gauge, 
         stog.strength, 
-        stog.vintage, 
-        id,
+        stog.is_favorite,
+        stog.image,
+        id
       ]
     );
-
     return editedStog;
   } catch (err) {
     return err;
