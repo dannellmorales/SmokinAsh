@@ -10,7 +10,7 @@ export default function StogNewForm () {
 
   const [stog, setStog] = useState({
     name: "",
-    brand: "",
+    vitola: "",
     length: 0,
     gauge: 0,
     strength: "",
@@ -54,13 +54,13 @@ export default function StogNewForm () {
           type="text"
           onChange={handleTextChange}
         />
-        <label htmlFor="brand">Cigar Brand: </label>
+        <label htmlFor="vitola">Cigar vitola: </label>
         <input
-          id="brand"
-          value={stog.brand}
+          id="vitola"
+          value={stog.vitola}
           type="text"
           onChange={handleTextChange}
-          placeholder="Cigar Brand"
+          placeholder="Cigar vitola"
 
         />
         <label htmlFor="length">Length: </label>
@@ -87,14 +87,6 @@ export default function StogNewForm () {
           type="text"
           onChange={handleTextChange}
           placeholder="Enter Mild, Medium, Mild to Medium, Medium, Medium to Full or Full"
-        />
-        <label htmlFor="vintage">Vintage: </label>
-        <input
-          id="vintage"
-          value={stog.vintage}
-          type="integer"
-          onChange={handleTextChange}
-          placeholder="Year Cigar Was Produced"
         />
         <label htmlFor="image">Image </label>
         <input

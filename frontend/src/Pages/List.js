@@ -4,7 +4,7 @@ import Stogies from '../Components/Stogies'
 function List() {
   return (
     <div>
-        <h2>Index</h2>
+        <h1><u>Cigar List</u></h1>
     <Stogies />
     </div>
   )

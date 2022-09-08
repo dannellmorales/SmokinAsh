@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <div>
-      Nav
-      <Link to="/" ><h1>Smokin Ash</h1></Link>
-      <Link to="/finder" ><h1>CigarShoppe Finder</h1></Link>
-      <Link to={`/stogs/new`}> Add Cigars</Link>
+      <Link to="/" ><h1>Home</h1></Link>
+      <Link to={`/stogs/new`}><h3>Add Cigars</h3></Link>
       </div>
   )
 }

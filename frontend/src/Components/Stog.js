@@ -6,7 +6,12 @@ function Stog({stogie}) {
   
   return (
     <div>
-     <Link to={`/stogs/${stogie.id}`}>{stogie.name} {stogie.brand} {stogie.length} &nbsp; {stogie.gauge} {stogie.strength} {stogie.vintage} {stogie.isFavorite}
+       {stogie.is_favorite ? (
+          <span className="glow">⭐️</span>
+        ) : (
+          null
+        )}
+     <Link to={`/stogs/${stogie.id}`}>Cigar Name<h2>{stogie.name}<br/>{stogie.vitola} <br/>{stogie.is_favorite}</h2><br/>
      </Link>
     </div>
   )

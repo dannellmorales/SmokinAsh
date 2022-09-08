@@ -17,7 +17,7 @@ function Stogies() {
   return (
     <div>
             {stogies.map((stogie) => {
-              return <Stog key={stogie.id} stogie={stogie}  />;
+              return <Stog key={stogie.id} stogie={stogie}  /> ;
             })}
        
     </div>

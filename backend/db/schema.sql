@@ -6,7 +6,7 @@ CREATE DATABASE stogs_dev;
 CREATE TABLE stogs (
     id          SERIAL PRIMARY KEY,
     name        TEXT NOT NULL,
-    brand       TEXT NOT NULL,
+    vitola       TEXT NOT NULL,
     length      TEXT NOT NULL,
     gauge       INTEGER,
     strength    TEXT,

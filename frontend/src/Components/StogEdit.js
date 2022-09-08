@@ -16,16 +16,15 @@ export default function StogEdit() {
 
   const [stog, setStog] = useState({
     name: "",
-    brand: "",
+    vitola: "",
     length: 0,
     gauge: 0,
     strength: "",
-    vintage: 0,
+    isFavorite: false,
     image: "",
-    isFavorite: false
   });
 
-  const handleTextChange = (e) => {
+  const handleChange = (e) => {
     setStog({ ...stog, [e.target.id]: e.target.value });
   };
 
@@ -42,7 +41,7 @@ export default function StogEdit() {
   };
 
   const handleCheckboxChange = () => {
-    setStog({ ...stog, isFavorite: !stog.is_favorite });
+    setStog({ ...stog, is_favorite: !stog.is_favorite });
   };
 
   const handleSubmit = (e) => {
@@ -58,15 +57,15 @@ export default function StogEdit() {
           id="name"
           value={stog.name}
           type="text"
-          onChange={handleTextChange}
+          onChange={handleChange}
         />
-        <label htmlFor="brand">Cigar Brand: </label>
+        <label htmlFor="vitola">Cigar vitola: </label>
         <input
-          id="brand"
-          value={stog.brand}
+          id="vitola"
+          value={stog.vitola}
           type="text"
-          onChange={handleTextChange}
-          placeholder="Cigar Brand"
+          onChange={handleChange}
+          placeholder="Cigar vitola"
 
         />
         <label htmlFor="length">Length: </label>
@@ -74,7 +73,7 @@ export default function StogEdit() {
           id="length"
           value={stog.length}
           type="integer"
-          onChange={handleTextChange}
+          onChange={handleChange}
           placeholder="Cigar Length"
 
         />
@@ -83,7 +82,7 @@ export default function StogEdit() {
           id="gauge"
           value={stog.gauge}
           type="integer"
-          onChange={handleTextChange}
+          onChange={handleChange}
           placeholder="Enter Cigar Ring Gauge"
         />
         <label htmlFor="strength">Strength: </label>
@@ -91,23 +90,17 @@ export default function StogEdit() {
           id="strength"
           value={stog.strength}
           type="text"
-          onChange={handleTextChange}
+          onChange={handleChange}
           placeholder="Enter Mild, Medium, Mild to Medium, Medium, Medium to Full or Full"
         />
-        <label htmlFor="vintage">Vintage: </label>
-        <input
-          id="vintage"
-          value={stog.vintage}
-          type="integer"
-          onChange={handleTextChange}
-          placeholder="Year Cigar Was Produced"
-        />
+
         <label htmlFor="image">Image </label>
         <input
           id="image"
           type="text"
-          onChange={handleTextChange}
-          
+          value={stog.image}
+          onChange={handleChange}
+          placeholder="Insert Pic URL Here"
         />
         <label htmlFor="isFavorite">Check Here To Indicate Favorite: </label>
         <input
