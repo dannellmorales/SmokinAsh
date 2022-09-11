@@ -48,7 +48,7 @@ stogs.delete("/:id", async (req, res) => {
   }
 });
 
-
+//Async will run only after a response is received from the editstog which will contain a value 
 stogs.put("/:id", async (req, res) => {
   const { id } = req.params;
   const editedStog = await editStog(req.body, id);
