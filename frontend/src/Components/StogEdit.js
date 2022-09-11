@@ -7,12 +7,12 @@ const API = process.env.REACT_APP_API_URL;
 export default function StogEdit() {
   let { id } = useParams();
   const navigate = useNavigate();
-
+//this runs when the page is open 
   useEffect(() => {
     axios.get(`${API}/stogs/${id}`)
       .then((response) => setStog(response.data.payload))
       .catch((error) => { console.error(error) })
-  }, [id, navigate]);
+  }, [id, navigate]); //depandencies held in an array
 
   const [stog, setStog] = useState({
     name: "",
@@ -28,12 +28,10 @@ export default function StogEdit() {
     setStog({ ...stog, [e.target.id]: e.target.value });
   };
 
-
   const updateStog = (updatedStog, id) => {
     axios
       .put(`${API}/stogs/${id}`, updatedStog)
-      .then(() => {
-        navigate(`/stogs/${id}`);
+      .then(() => {navigate(`/stogs/${id}`);
       },
         (error) => console.error(error)
       )
@@ -59,6 +57,8 @@ export default function StogEdit() {
           type="text"
           onChange={handleChange}
         />
+        <br/>
+        <br/>
         <label htmlFor="vitola">Cigar vitola: </label>
         <input
           id="vitola"
@@ -68,6 +68,8 @@ export default function StogEdit() {
           placeholder="Cigar vitola"
 
         />
+        <br/>
+        <br/>
         <label htmlFor="length">Length: </label>
         <input
           id="length"
@@ -77,6 +79,8 @@ export default function StogEdit() {
           placeholder="Cigar Length"
 
         />
+        <br/>
+        <br/>
         <label htmlFor="gauge">Gauge: </label>
         <input
           id="gauge"
@@ -85,6 +89,8 @@ export default function StogEdit() {
           onChange={handleChange}
           placeholder="Enter Cigar Ring Gauge"
         />
+        <br/>
+        <br/>
         <label htmlFor="strength">Strength: </label>
         <input
           id="strength"
@@ -93,7 +99,8 @@ export default function StogEdit() {
           onChange={handleChange}
           placeholder="Enter Mild, Medium, Mild to Medium, Medium, Medium to Full or Full"
         />
-
+        <br/>
+        <br/>
         <label htmlFor="image">Image </label>
         <input
           id="image"
@@ -102,6 +109,8 @@ export default function StogEdit() {
           onChange={handleChange}
           placeholder="Insert Pic URL Here"
         />
+        <br/>
+        <br/>
         <label htmlFor="isFavorite">Check Here To Indicate Favorite: </label>
         <input
           id="is_favorite"
@@ -109,6 +118,7 @@ export default function StogEdit() {
           onChange={handleCheckboxChange}
           checked={stog.is_favorite}
         />
+        <br/>
         <br />
         <input type="submit" />
 

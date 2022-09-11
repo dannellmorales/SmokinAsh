@@ -54,6 +54,8 @@ export default function StogNewForm () {
           type="text"
           onChange={handleTextChange}
         />
+        <br/>
+        <br/>
         <label htmlFor="vitola">Cigar vitola: </label>
         <input
           id="vitola"
@@ -61,8 +63,9 @@ export default function StogNewForm () {
           type="text"
           onChange={handleTextChange}
           placeholder="Cigar vitola"
-
         />
+        <br/>
+        <br/>
         <label htmlFor="length">Length: </label>
         <input
           id="length"
@@ -70,8 +73,9 @@ export default function StogNewForm () {
           type="integer"
           onChange={handleTextChange}
           placeholder="Cigar Length"
-
         />
+        <br/>
+        <br/>
         <label htmlFor="gauge">Gauge: </label>
         <input
           id="gauge"
@@ -80,6 +84,8 @@ export default function StogNewForm () {
           onChange={handleTextChange}
           placeholder="Enter Cigar Ring Gauge"
         />
+        <br/>
+        <br/>
         <label htmlFor="strength">Strength: </label>
         <input
           id="strength"
@@ -88,6 +94,8 @@ export default function StogNewForm () {
           onChange={handleTextChange}
           placeholder="Enter Mild, Medium, Mild to Medium, Medium, Medium to Full or Full"
         />
+        <br/>
+        <br/>
         <label htmlFor="image">Image </label>
         <input
           id="image"
@@ -95,6 +103,7 @@ export default function StogNewForm () {
           onChange={handleTextChange}
           checked={stog.image}
         />
+        <br/>
         <label htmlFor="is_favorite">Check Here To Indicate Favorite: </label>
         <input
           id="is_favorite"

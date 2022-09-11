@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nav from './Components/Nav';
-
+import { Navigation } from './Components/Navigation';
 import Home from './Pages/Home';
 import List from './Pages/List';
 import Show from './Pages/Show';
@@ -12,9 +11,9 @@ import FOF from './Pages/FOF';
 
 function App() {
   return (
-    <div className="App">
+    <div className="grid">
       <Router>
-        <Nav />
+        <Navigation/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stogs" element={<List />} />
